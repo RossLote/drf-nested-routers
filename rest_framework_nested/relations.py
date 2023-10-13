@@ -20,9 +20,7 @@ except NameError:
 
 class NestedHyperlinkedRelatedField(rest_framework.relations.HyperlinkedRelatedField):
     lookup_field = 'pk'
-    parent_lookup_kwargs = {
-        'parent_pk': 'parent__pk'
-    }
+    parent_lookup_kwargs = {}
 
     def __init__(self, *args, **kwargs):
         self.parent_lookup_kwargs = kwargs.pop('parent_lookup_kwargs', self.parent_lookup_kwargs)
